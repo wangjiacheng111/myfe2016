@@ -7,58 +7,51 @@
 </head>
 <body>
 <ul id="menu">
-    <li class="main_menu">
-        <a href="#">link 1</a>
+    <li class="main_menu"><a href="#">游戏资料</a>
         <ul>
-            <li><a href="#">sublink 1</a></li>
-            <li><a href="#">sublink 2</a></li>
-            <li><a href="#">sublink 3</a></li>
+            <li><a href="#">新手指引</a></li>
+            <li><a href="#">资料库</a></li>
+            <li><a href="#">攻略中心</a></li>
+            <li><a href="#">模拟实验室</a></li>
+            <li><a href="#">海克斯战利品库</a></li>
         </ul>
     </li>
-    <li class="main_menu"><a href="#">link 2</a>
+    <li class="main_menu"><a href="#">商城/合作</a>
         <ul>
-            <li><a href="#">sublink 1</a></li>
-            <li><a href="#">sublink 2</a></li>
-            <li><a href="#">sublink 3</a></li>
+            <li><a href="#">点卷充值</a></li>
+            <li><a href="#">道聚城</a></li>
+            <li><a href="#">周边商城</a></li>
+            <li><a href="#">LOL信用卡</a></li>
+            <li><a href="#">网吧特权</a></li>
         </ul>
     </li>
-    <li class="main_menu"><a href="#">link 3</a>
+    <li class="main_menu"><a href="#">用户互动</a>
         <ul>
-            <li><a href="#">sublink 1</a></li>
-            <li><a href="#">sublink 2</a></li>
-            <li><a href="#">sublink 3</a></li>
+            <li><a href="#">在线客服</a></li>
+            <li><a href="#">活动中心</a></li>
+            <li><a href="#">官方论坛</a></li>
+            <li><a href="#">官方微信</a></li>
+            <li><a href="#">官方微博</a></li>
         </ul>
     </li>
-
-
+    <li class="main_menu"><a href="#">赛事中心</a>
+        <ul>
+            <li><a href="#">LPL职业联赛</a></li>
+            <li><a href="#">甲级职业联赛</a></li>
+            <li><a href="#">德玛西亚杯</a></li>
+            <li><a href="#">城市英雄争霸赛</a></li>
+            <li><a href="#">高校联赛</a></li>
+        </ul>
+    </li>
+    <li class="main_menu"><a href="#">个人中心</a>
+        <ul>
+            <li><a href="#">个人资料</a></li>
+            <li><a href="#">我的英雄与皮肤</a></li>
+            <li><a href="#">战绩历史</a></li>
+        </ul>
+    </li>
 </ul>
 
-<script>
-    var Menu = document.getElementById('menu');
-    var MainMenu = Menu.getElementsByTagName('li');
-    for(var i=0; i<MainMenu.length; i++){
-        if(MainMenu[i].className == 'main_menu') {
-            MainMenu[i].onmouseover = function () {
-                var submenu = this.getElementsByTagName('ul')[0];
-                submenu.style.display = 'block';
-            };
-            MainMenu[i].onmouseout = function () {
-                var submenu = this.getElementsByTagName('ul')[0];
-                submenu.style.display = 'none';
-            };
-        }
-    }
-//    var aMainMenu = document.getElementsByClassName("main_menu");
-//    for(var i=0; i<aMainMenu.length; i++){
-//        aMainMenu[i].onmouseover = function(){
-//            var oUl = this.getElementsByTagName("ul")[0];
-//            oUl.style.display = "block";
-//        };
-//        aMainMenu[i].onmouseout = function(){
-//            var oUl = this.getElementsByTagName("ul")[0];
-//            oUl.style.display = "none";
-//        };
-//    } //IE8以下不支持 但是此方式可以省略判断
-</script>
+<script src="1.js"></script>
 </body>
 </html>
