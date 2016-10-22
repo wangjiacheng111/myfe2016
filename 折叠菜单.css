@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+#menu h1{
+    width: 200px;
+    height: 30px;
+    background: #000000;
+    color: #fff;
+    line-height: 30px;
+    cursor: pointer;
+    text-align: center;
+}
+#menu li{
+    width: 200px;
+}
+#menu .submenu{
+    border: 1px solid #000;
+    display: none;
+    text-align: center;
+}
