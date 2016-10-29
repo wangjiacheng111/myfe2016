@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+ul{
+    list-style: none;
+}
+
+li{
+    text-decoration: none;
+}
+
+#first{
+    /*background: #eeeeee;*/
+    width: 400px;
+    height: 300px;
+    margin: 50px auto;
+}
+
+#text{
+    background: #eee;
+    width: 500px;
+    height: 500px;
+    border-top: 1px solid black;
+}
+
+#first li{
+    float: left;
+    width: 120px;
+    height: 30px;
+    background: #ccc;
+    margin-left: 5px;
+    line-height: 30px;
+    cursor: pointer;
+    text-align: center;
+}
+#first li.a{
+    background: black;
+    color: white;
+}
+#first ul{
+    overflow: hidden;
+}
