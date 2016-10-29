@@ -11,7 +11,7 @@ a{
 body{
     width: 100%;
     height: 100%;
-    background-image: url(img/423299.jpg);
+    background-image: url(../img/423299.jpg);
 }
 #menu .main_menu{
     float: left;
@@ -20,18 +20,25 @@ body{
     background: #cccccc;
     margin-right: 5px;
 }
+#menu .main_menu .magin-menu{
+    margin-right: 0;
+}
 #menu .main_menu a{
     width: 100%;
     height: 100%;
     display: block;
     text-align: center;
     line-height: 30px;
+    color:black;
 }
 #menu .main_menu ul{
     display: none;
 }
 #menu .main_menu li{
     border-bottom: 1px dashed #333;
+}
+#menu .main_menu ul a:hover{
+    background: #fff;
 }
 #menu .main_menu ul a{
     background: #eee;
