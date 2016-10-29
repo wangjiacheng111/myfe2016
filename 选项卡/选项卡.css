@@ -12,14 +12,12 @@ li{
 }
 
 #first{
-    /*background: #eeeeee;*/
-    width: 400px;
-    height: 300px;
+    width: 500px;
+    height: 500px;
     margin: 50px auto;
 }
 
 #text{
-    background: #eee;
     width: 500px;
     height: 500px;
     border-top: 1px solid black;
