@@ -117,7 +117,7 @@
     var oPrev = document.getElementById('prev');
     var oTab = document.getElementById('tab');
     var oRow = document.getElementById('row');
-    var oUl = document.getElementById('tab')
+    var oUl = document.getElementById('tab');
     var iNow = 0;
     var timer;
     var zIndex = 4;
@@ -155,7 +155,7 @@
     };
     timer = setInterval(function(){
         oNext.onclick();
-    },1800);
+    },2000);
     oContainer.onmouseover = function(){
         clearInterval(timer);
         oNext.style.display = 'block';
@@ -166,7 +166,7 @@
     oContainer.onmouseout = function(){
         timer = setInterval(function(){
             oNext.onclick();
-        },1800);
+        },2000);
         oNext.style.display = 'none';
         oPrev.style.display = 'none';
         oUl.style.opacity = 0.5;

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>无缝滑动</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        ul{
+            list-style: none;
+        }
+
+        li{
+            width: 20px;
+            height: 20px;
+            text-decoration: none;
+            float: left;
+            margin-right: 10px;
+            background: #000;
+            color: white;
+            text-align: center;
+            cursor: pointer;
+        }
+        body{
+            width: 100%;
+            height: 100%;
+            -webkit-user-select: none;/*禁止双击选中页面文本*/
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        span{
+            width: 20px;
+            height: 20px;
+            background: #000;
+            color: white;
+            float: left;
+            margin-right: 10px;
+            text-align: center;
+        }
+        #container{
+            width: 640px;
+            height:344px;
+            margin: 200px auto;
+            position: relative;
+            overflow: hidden;
+            border-radius: 50px;
+        }
+        #content img{
+            width: 640px;
+            height: 344px;
+            float: left;
+            border-radius: 70px;
+        }
+        #tab{
+            position: absolute;
+            left: 500px;
+            bottom: 20px;
+        }
+        #row{
+            position: absolute;
+            left: 20px;
+            bottom: 20px;
+        }
+        #content{
+            position: absolute;
+        }
+        ul .selected{
+            background: orange;
+        }
+        span{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <div id="content">
+        <img src="../img/485578.jpg"/>
+        <img src="../img/778426.jpg"/>
+        <img src="../img/425234.jpg"/>
+        <img src="../img/916019.jpg"/>
+    </div>
+    <ul id="tab">
+        <li class="selected">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    <div id="row">
+        <span id="prev">&lt</span>
+        <span id="next">&gt</span>
+    </div>
+</div>
+
+<script src="../动画.js"></script>
+<script>
+    var oContainer = document.getElementById('container');
+    var aLi = oContainer.getElementsByTagName('li');
+    var aImg = oContainer.getElementsByTagName('img');
+    var oContent = document.getElementById('content');
+    var oNext = document.getElementById('next');
+    var oPrev = document.getElementById('prev');
+    oContent.appendChild(aImg[0].cloneNode());
+    oContent.style.width = aImg.length * aImg[0].offsetWidth+'px';
+
+    var iNow = 0;
+    var timer;
+    var a = aImg[0].offsetWidth;
+    for(var i=0; i<aLi.length; i++){
+        aLi[i].index = i;
+        aLi[i].onmouseover = function(){
+            changeImg(this.index);
+            iNow = this.index;
+            animate(oContent,{left: -a * this.index})
+
+        }
+    }
+
+    oNext.onclick = function(){
+        iNow++;
+        if(iNow == aLi.length+1){
+            oContent.style.left = 0;
+            iNow = 1;
+        }
+        changeImg(iNow);
+        animate(oContent,{left: -a * iNow})
+    };
+    oPrev.onclick = function(){
+      iNow--;
+        if(iNow == -1){
+            oContent.style.left = -aLi.length*aImg[0].offsetWidth + 'px';
+            iNow = 3;
+        }
+        changeImg(iNow);
+        animate(oContent,{left: -a * iNow})
+    };
+
+    timer = setInterval(function(){
+        oNext.onclick();
+    },1800);
+    oContainer.onmouseover = function(){
+        clearInterval(timer);
+    };
+    oContainer.onmouseout = function(){
+        timer = setInterval(function(){
+            oNext.onclick();
+        },1800)
+    };
+
+    function changeImg(a){
+        for(var j=0; j<aLi.length; j++){
+            aLi[j].className = '';
+            aImg[j].className = '';
+        }
+        aLi[a == aLi.length?0:a].className = 'selected';
+    }
+</script>
+</body>
+</html>
